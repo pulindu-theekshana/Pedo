@@ -1,0 +1,33 @@
+* { box-sizing: border-box; margin: 0; }
+html, body { height: 100%; background: #2B1D16; color: #E8D9C5;
+  font-family: 'Segoe UI', sans-serif; overflow: hidden; }
+body { display: flex; flex-direction: column; }
+
+#titlebar { height: 36px; display: flex; align-items: center; flex-shrink: 0;
+  padding: 0 150px 0 8px; -webkit-app-region: drag; }
+body.fullscreen #titlebar { padding-right: 8px; }
+
+#tabs { display: flex; gap: 2px; flex: 1; height: 100%; align-items: flex-end; overflow: hidden; }
+.tab { -webkit-app-region: no-drag; display: flex; align-items: center; gap: 8px;
+  padding: 0 10px; height: 30px; max-width: 200px; font-size: 12px;
+  background: #3A2A21; border-radius: 6px 6px 0 0; cursor: default; }
+.tab.active { background: #4A362A; }
+.tab .name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.tab .x { opacity: .6; cursor: pointer; }
+.tab .x:hover { opacity: 1; }
+
+#pageinfo { font-size: 12px; opacity: .7; margin: 0 10px; }
+#fs { -webkit-app-region: no-drag; background: none; border: none; color: #E8D9C5;
+  width: 24px; height: 24px; border-radius: 4px; cursor: pointer; opacity: .7; }
+#fs:hover { background: #4A362A; opacity: 1; }
+
+#viewer { flex: 1; overflow: auto; background: #1F1410; }
+#viewer { position: relative; }
+#pages { display: flex; flex-direction: column; align-items: center; gap: 8px;
+  padding: 8px; min-width: fit-content; }
+.page { background: #fff; flex-shrink: 0; box-shadow: 0 2px 8px rgba(0,0,0,.4); }
+#empty { position: absolute; inset: 0; display: flex; align-items: center;
+  justify-content: center; opacity: .5; pointer-events: none; }
+
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-thumb { background: #4A362A; border-radius: 5px; }
